@@ -1,24 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>700</width>
+    <height>737</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="1" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>220</width>
+        <height>0</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPlainTextEdit" name="plainTextEdit_4">
+      <property name="tabChangesFocus">
+       <bool>true</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="5" column="0">
+       <widget class="QGroupBox" name="Ports">
+        <property name="title">
+         <string>Port(s)</string>
+        </property>
+        <widget class="QPlainTextEdit" name="ptePorts">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>181</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="tabChangesFocus">
+          <bool>true</bool>
+         </property>
+         <property name="placeholderText">
+          <string>22 / 69-420</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Minimum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>100</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="1">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Minimum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>80</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="5" column="1">
+       <spacer name="verticalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Minimum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>90</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="3" column="0">
+       <widget class="QGroupBox" name="Destination">
+        <property name="title">
+         <string>Destination</string>
+        </property>
+        <widget class="QCheckBox" name="chbDestinationWildcard">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>181</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Everything ( * )</string>
+         </property>
+        </widget>
+        <widget class="QPlainTextEdit" name="pteDestinationIP">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>181</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="tabChangesFocus">
+          <bool>true</bool>
+         </property>
+         <property name="placeholderText">
+          <string>192.168.0.128</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QGroupBox" name="Location">
+        <property name="title">
+         <string>Location</string>
+        </property>
+        <widget class="QRadioButton" name="rbInsert">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>50</y>
+           <width>102</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>I&amp;nsert</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="rbAppend">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>102</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Append</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="cbLocation">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>40</y>
+           <width>79</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <property name="frame">
+          <bool>true</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>Input</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Output</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Forward</string>
+          </property>
+         </item>
+        </widget>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <spacer name="verticalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Minimum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>100</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="0">
+       <widget class="QGroupBox" name="Source">
+        <property name="title">
+         <string>Source</string>
+        </property>
+        <widget class="QCheckBox" name="chbSourceWildcard">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>181</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Everything ( * )</string>
+         </property>
+        </widget>
+        <widget class="QPlainTextEdit" name="pteSourceIP">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>181</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="tabChangesFocus">
+          <bool>true</bool>
+         </property>
+         <property name="placeholderText">
+          <string>192.168.0.128</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QGroupBox" name="Protocol">
+        <property name="title">
+         <string>Protocol</string>
+        </property>
+        <widget class="QComboBox" name="cbProtocol">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>40</y>
+           <width>79</width>
+           <height>26</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>ALL</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>TCP</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>UDP</string>
+          </property>
+         </item>
+        </widget>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <spacer name="verticalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Minimum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>100</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="6" column="1">
+       <spacer name="verticalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Minimum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>100</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="6" column="0">
+       <widget class="QGroupBox" name="Policy">
+        <property name="title">
+         <string>Policy</string>
+        </property>
+        <widget class="QRadioButton" name="rbPolicyAccept">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>102</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Accept</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="rbPolicyBlock">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>102</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Bloc&amp;k</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="rbPolicyDrop">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>102</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Drop</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuIpTable">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Setti&amp;ngs</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Abo&amp;ut</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuFirwall">
+    <property name="title">
+     <string>Fi&amp;rewall</string>
+    </property>
+    <addaction name="actionIpTable"/>
+    <addaction name="actionPF"/>
+    <addaction name="actionIpfilter"/>
+    <addaction name="actionIPFW"/>
+   </widget>
+   <addaction name="menuIpTable"/>
+   <addaction name="menuFirwall"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <action name="actionIpTable">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Iptables</string>
+   </property>
+  </action>
+  <action name="actionPF">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>PF</string>
+   </property>
+  </action>
+  <action name="actionIpfilter">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>IPFilter</string>
+   </property>
+  </action>
+  <action name="actionIPFW">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>IPFW</string>
+   </property>
+  </action>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>rbAppend</tabstop>
+  <tabstop>rbInsert</tabstop>
+  <tabstop>cbLocation</tabstop>
+  <tabstop>cbProtocol</tabstop>
+  <tabstop>chbSourceWildcard</tabstop>
+  <tabstop>pteSourceIP</tabstop>
+  <tabstop>chbDestinationWildcard</tabstop>
+  <tabstop>pteDestinationIP</tabstop>
+  <tabstop>ptePorts</tabstop>
+  <tabstop>rbPolicyAccept</tabstop>
+  <tabstop>rbPolicyBlock</tabstop>
+  <tabstop>rbPolicyDrop</tabstop>
+  <tabstop>plainTextEdit_4</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
